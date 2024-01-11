@@ -12,25 +12,22 @@ function Notes({ note, editNote, deleteNote, pinNote }) {
 
   function handleMouseDown(e) {
     setAllowMove(true);
-    console.log("down");
     const dim = moveRef.current.getBoundingClientRect();
     setDx(e.clientX - dim.x);
     setDy(e.clientY - dim.y);
   }
 
-  function handleMouseUp() {
-    console.log("up");
-    setAllowMove(false);
-  }
-
   function handleMouseMove(e) {
     if (allowMove) {
-      console.log("move");
       const x = e.clientX - dx;
       const y = e.clientY - dy;
       moveRef.current.style.left = x + "px";
       moveRef.current.style.top = y + "px";
     }
+  }
+
+  function handleMouseUp() {
+    setAllowMove(false);
   }
 
   function isEditing() {
@@ -46,16 +43,20 @@ function Notes({ note, editNote, deleteNote, pinNote }) {
   return (
     <div ref={moveRef} className="note">
       <div
-        className="pin-delete-buttons"
+        className="sticky-header"
         onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
       >
+        Sticky Note
+      </div>
+      <div className="pin-delete-buttons">
         <button onClick={() => pinNote(note.id)}>
           <img src={pin}></img>
         </button>
         <button onClick={() => deleteNote(note.id)}>X</button>
       </div>
+
       <textarea
         placeholder="Enter your note here...."
         ref={textRef}
