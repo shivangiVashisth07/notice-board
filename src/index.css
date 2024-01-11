@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.notice-board {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding-top: 60px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: darkgoldenrod;
+}
+
+.board {
+  width: 95%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.add-button {
+  width: 5%;
+}
+
+.add-button > button:hover {
+  transform: scale(1.5);
+}
+
+.note {
+  width: 22%;
+  height: 220px;
+  margin: 1.5%;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: space-between;
+  position: absolute;
+  top: 80 px;
+  left: 80 px;
+}
+
+.text-area {
+  font-family: "Satisfy", cursive;
+  font-size: 22px;
+  width: 100%;
+  height: 80%;
+  direction: ltr;
+  display: block;
+  max-width: 100%;
+  line-height: 1.5;
+  background-color: yellow;
+  border: none;
+  resize: none;
+  padding: 4px;
+  outline: none;
+}
+
+.pin-delete-buttons {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: end;
+}
+
+.pin-delete-buttons > button {
+  background-color: yellow;
+  border: none;
+  max-width: 10%;
+}
+
+.edit-button {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.edit-button > button {
+  border-radius: 30%;
+  border-color: ghostwhite;
+  font-size: 75%;
+}
+
+.note > .pin-delete-buttons > button:hover {
+  transform: scale(1.3);
+}
+.note > .edit-button > button:hover {
+  transform: scale(1.2);
+}
